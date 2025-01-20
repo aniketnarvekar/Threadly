@@ -95,6 +95,10 @@ public struct ThreadLocal<Value>: Hashable {
         return _def.hashValue
     }
 
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_def.hashValue)
+    }
+
     /// Returns the inner boxed value for the current thread.
     public var inner: Box<Value> {
         return _def.inner(createdWith: _create)
@@ -149,6 +153,10 @@ public struct DeferredThreadLocal<Value>: Hashable {
     /// The hash value.
     public var hashValue: Int {
         return _key.raw.hashValue
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_key.raw.hashValue)
     }
 
     /// Returns the inner boxed value for the current thread if it's been
