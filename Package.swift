@@ -1,3 +1,4 @@
+// swift-tools-version: 5.10.0
 //
 //  Package.swift
 //  Threadly
