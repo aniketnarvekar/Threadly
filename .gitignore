@@ -126,3 +126,4 @@ fastlane/test_output
 ## Other
 *.xccheckout
 *.xcscmblueprint
+.swiftpm
