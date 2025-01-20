@@ -29,9 +29,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "Threadly"
+    name: "Threadly",
+    products: [
+        // Products define the executables and libraries a package produces, making them visible to other packages.
+        .library(
+            name: "Threadly",
+            targets: ["Threadly"]),
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package, defining a module or a test suite.
+        // Targets can depend on other targets in this package and products from dependencies.
+        .target(name: "Threadly"),
+    ]
 )
-
-#if swift(>=3.1)
-    package.swiftLanguageVersions = [3, 4]
-#endif
